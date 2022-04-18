@@ -7,25 +7,18 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <h1>Awesome Books</h1>
-    <ul id="ourList">
-        <li>
-            Half of the yellow
-            <br>Roland <br>
-            <button type="button">Remove</button>
-            <hr>
-        </li>
-        <li>
-            Half of the Blue
-            <br> Roland <br>
-            <button type="button">Remove</button>
-            <hr>
-        </li>
-    </ul>
-    <form id="ourForm">
-        <input id="bookTitle" type="text" placeholder="Title"> <br>
-        <input id="bookAuthor" type="text" placeholder="Author"> <br>
+    <section>
+        <h1>Awesome Books</h1>
+    <div id="books-record">
+    </div>
+    </section>
+   
+    <form id="bookForm">
+        <input id="bookTitle" type="text" placeholder="Title" required> <br> <br>
+        <input id="bookAuthor" type="text" placeholder="Author" required> <br> <br>
         <button id="addButton" type="submit">Add</button>
     </form>
+
+    <script src="index.js"></script>
 </body>
 </html>
