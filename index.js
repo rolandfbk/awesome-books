@@ -21,25 +21,6 @@ function displayBook(title, author, id) {
     <hr>`;
 
   bookRec.insertAdjacentHTML('beforeend', templateHTML);
-
-  const removeBtn = document.querySelectorAll('.remove-bttn');
-  removeBtn.forEach((btn, key) => {
-    btn.addEventListener('click', () => {
-      // booksrecord = booksrecord.filter((book) => book.id !== Number(btn.id));
-      bookRec.innerHTML = '';
-      booksrecord.forEach((book) => {
-        if (key === 0) {
-          booksrecord.splice(key, key + 1);
-        } else {
-          booksrecord.splice(key, key);
-        }
-        localStorage.setItem('bookArchive', JSON.stringify(booksrecord));
-        window.location.reload();
-        displayBook(book.title, book.author, book.id);
-      });
-      localStorage.setItem('bookStorage', JSON.stringify(booksrecord));
-    });
-  });
 }
 
 function getBooks() {
@@ -66,3 +47,20 @@ function insertBook() {
 }
 
 insertBook();
+
+const removeBtn = document.querySelectorAll('.remove-bttn');
+removeBtn.forEach((btn, index) => {
+
+  btn.addEventListener('click', () => {
+    if (index === 0) {
+      booksrecord.splice(index, index + 1);
+    } else {
+      booksrecord.splice(index, index);
+    }
+
+    bookRec.innerHTML = '';
+    localStorage.setItem('bookArchive', JSON.stringify(booksrecord));
+    window.location.reload();
+    localStorage.setItem('bookStorage', JSON.stringify(booksrecord));
+  });
+});
