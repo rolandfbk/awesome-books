@@ -11,11 +11,11 @@ class Book {
   }
 }
 
-let booksrecord = JSON.parse(localStorage.getItem('bookArchive')) || [];
+const booksrecord = JSON.parse(localStorage.getItem('bookArchive')) || [];
 
 function displayBook(title, author, id) {
   const templateHTML = `
-    ${title}<br>  
+    ${title}<br>
     ${author}<br>
     <button type='button' class="remove-bttn" id="${id}">Remove</button>
     <hr>`;
@@ -23,11 +23,18 @@ function displayBook(title, author, id) {
   bookRec.insertAdjacentHTML('beforeend', templateHTML);
 
   const removeBtn = document.querySelectorAll('.remove-bttn');
-  removeBtn.forEach((btn) => {
+  removeBtn.forEach((btn, key) => {
     btn.addEventListener('click', () => {
-      booksrecord = booksrecord.filter((book) => book.id !== Number(btn.id));
+      // booksrecord = booksrecord.filter((book) => book.id !== Number(btn.id));
       bookRec.innerHTML = '';
       booksrecord.forEach((book) => {
+        if (key === 0) {
+          booksrecord.splice(key, key + 1);
+        } else {
+          booksrecord.splice(key, key);
+        }
+        localStorage.setItem('bookArchive', JSON.stringify(booksrecord));
+        window.location.reload();
         displayBook(book.title, book.author, book.id);
       });
       localStorage.setItem('bookStorage', JSON.stringify(booksrecord));
