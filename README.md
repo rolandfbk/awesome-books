@@ -23,7 +23,7 @@ Saving current state of book list to local storage
 > To get a local copy, follow the following steps
 
 Prerequisites
->- VS code 
+>- VS code
 >- Git Bash
 
 Setup
@@ -37,6 +37,13 @@ Setup
 >- GitHub: [@V0pe](https://github.com/V0pe)
 >- Twitter: [@de_vope_](https://twitter.com/de_vope)
 >- LinkedIn: [Victor Damola](https://linkedin.com/in/victor-damola-aderibigbe-27931ab0)
+
+
+👤 **Roland Ossisa Yuma**
+
+>- GitHub: [@rolandfbk](https://github.com/rolandfbk)
+>- LinkedIn: [Roland Ossisa Yuma](linkedin.com/in/roland-ossisa-yuma-4595547b)
+>- Twitter: [@rolandfbk](https://twitter.com/rolandfbk)
 
 ## 🤝 Contributing
 
