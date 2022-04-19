@@ -50,7 +50,6 @@ insertBook();
 
 const removeBtn = document.querySelectorAll('.remove-bttn');
 removeBtn.forEach((btn, index) => {
-
   btn.addEventListener('click', () => {
     if (index === 0) {
       booksrecord.splice(index, index + 1);
