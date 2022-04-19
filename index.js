@@ -15,10 +15,12 @@ const booksrecord = JSON.parse(localStorage.getItem('bookArchive')) || [];
 
 function displayBook(title, author, id) {
   const templateHTML = `
-    ${title}<br>
-    ${author}<br>
-    <button type='button' class="remove-bttn" id="${id}">Remove</button>
-    <hr>`;
+    <tr>
+      <td class="table-item">
+        "${title}" by ${author}
+        <button type='button' class="remove-bttn" id="${id}">Remove</button>
+      </td>
+    </tr>`;
 
   bookRec.insertAdjacentHTML('beforeend', templateHTML);
 }

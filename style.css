@@ -1,0 +1,61 @@
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+}
+
+.books-record {
+  width: 70%;
+  align-self: center;
+  border: 2px solid #000;
+  border-spacing: 0;
+}
+
+.table-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+hr {
+  border: 2px solid #000;
+  width: 25%;
+}
+
+.bookForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 40%;
+}
+
+.btnSubmit {
+  text-align: right;
+}
+
+input {
+  width:-webkit-fill-available;
+  padding: 5px;
+  border: 2px solid #000;
+}
+
+.remove-bttn {
+  border: 2px solid #000;
+  padding: 5px;
+}
+
+#addButton {
+  border: 2px solid #000;
+  padding: 5px;
+}

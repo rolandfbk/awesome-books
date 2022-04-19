@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <section>
-        <h1>Awesome Books</h1>
-    <div id="books-record">
-    </div>
+        <h1 class="title">All awesome books</h1>
+    <table class="books-record">
+        <tbody id="books-record">
+
+        </tbody>
+    </table>
+    <br>
+    <hr>
     </section>
-   
-    <form id="bookForm">
-        <input id="bookTitle" type="text" placeholder="Title" required> <br> <br>
-        <input id="bookAuthor" type="text" placeholder="Author" required> <br> <br>
-        <button id="addButton" type="submit">Add</button>
-    </form>
+    <br>
+    <div class="bookForm">
+        <h2>Add a new book</h2>
+        <form id="bookForm">
+            <div><input id="bookTitle" type="text" placeholder="Title" required></div>
+            <br>
+            <div><input id="bookAuthor" type="text" placeholder="Author" required></div>
+            <br>
+            <div class="btnSubmit"><button id="addButton" type="submit">Add</button></div>
+        </form>
+    </div>
+
 
     <script src="index.js"></script>
 </body>
