@@ -12,7 +12,7 @@ class Book {
     this.id = new Date().getTime().toString().concat(performance.now());
   }
 
-  displayBook(title, author, id) {
+  static displayBook(title, author, id) {
     const templateHTML = `
       <tr>
         <td class="table-item">
@@ -24,14 +24,14 @@ class Book {
     bookRec.insertAdjacentHTML('beforeend', templateHTML);
   }
 
-  getBooks() {
+  static getBooks() {
     const storage = JSON.parse(localStorage.getItem('bookArchive'));
     storage.forEach((book) => {
-      this.displayBook(book.title, book.author, book.id);
+      Book.displayBook(book.title, book.author, book.id);
     });
   }
 
-  remove(button, key) {
+  static remove(button, key) {
     button.addEventListener('click', () => {
       if (key === 0) {
         booksrecord.splice(key, key + 1);
@@ -56,18 +56,17 @@ function insertBook() {
     bookTitle.focus();
     bookAuthor.focus();
     localStorage.setItem('bookArchive', JSON.stringify(booksrecord));
-    inputBook.getBooks();
+    Book.getBooks();
   });
 
-  const showBooks = new Book();
   localStorage.setItem('bookArchive', JSON.stringify(booksrecord));
-  showBooks.getBooks();
+  Book.getBooks();
 }
 
 insertBook();
 
 const removeBtn = document.querySelectorAll('.remove-bttn');
 removeBtn.forEach((btn, index) => {
-  const removeBtn = new Book();
-  removeBtn.remove(btn, index);
+  // const removeBtn = new Book();
+  Book.remove(btn, index);
 });
