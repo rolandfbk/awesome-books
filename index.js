@@ -1,16 +1,24 @@
-import Book from './book.js';
+/* eslint-disable max-classes-per-file */
 
 const bookTitle = document.getElementById('bookTitle');
 const bookAuthor = document.getElementById('bookAuthor');
 const bookForm = document.getElementById('bookForm');
 const bookRec = document.getElementById('books-record');
 
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.id = new Date().getTime().toString().concat(performance.now());
+  }
+}
+
 class Booksdatabase {
   constructor() {
     this.booksrecord = JSON.parse(localStorage.getItem('bookArchive')) || [];
   }
 
-  displayBook(title, author, id) {
+  static displayBook(title, author, id) {
     const templateHTML = `
       <tr>
         <td class="table-item">
@@ -25,7 +33,7 @@ class Booksdatabase {
   getBooks() {
     const storage = JSON.parse(localStorage.getItem('bookArchive'));
     storage.forEach((book) => {
-      this.displayBook(book.title, book.author, book.id);
+      Booksdatabase.displayBook(book.title, book.author, book.id);
     });
   }
 
