@@ -30,7 +30,7 @@ class Booksdatabase {
     bookRec.insertAdjacentHTML('beforeend', templateHTML);
   }
 
-  getBooks() {
+  static getBooks() {
     const storage = JSON.parse(localStorage.getItem('bookArchive'));
     storage.forEach((book) => {
       Booksdatabase.displayBook(book.title, book.author, book.id);
@@ -61,11 +61,11 @@ class Booksdatabase {
       bookTitle.focus();
       bookAuthor.focus();
       localStorage.setItem('bookArchive', JSON.stringify(this.booksrecord));
-      this.getBooks();
+      Booksdatabase.getBooks();
     });
 
     localStorage.setItem('bookArchive', JSON.stringify(this.booksrecord));
-    this.getBooks();
+    Booksdatabase.getBooks();
   }
 }
 
