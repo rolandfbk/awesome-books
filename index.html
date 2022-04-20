@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <section>
-        <h1 class="title">All awesome books</h1>
-    <table class="books-record">
-        <tbody id="books-record">
-
-        </tbody>
-    </table>
-    <br>
-    <hr>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body onload="load()">
+    <section class="navigation">
+      <nav class="nav">
+        <div><b>Awesome Books</b></div>
+        <div>
+          <a href="#" id="list" onclick="displayList(this)">List</a> | <a href="#" id="add" onclick="displayAdd(this)">Add new</a> | <a href="#" id="contact" onclick="displayContact(this)">Contact</a>
+        </div>
+      </nav>
     </section>
-    <br>
-    <div class="bookForm">
+    <section class="book-list" id="book-list">
+      <h1 class="title">All awesome books</h1>
+      <table class="books-record">
+        <tbody id="books-record"></tbody>
+      </table>
+      <br />
+
+    </section>
+    <section class="add-book" id="add-book">
+      <br />
+      <div class="bookForm">
         <h2>Add a new book</h2>
         <form id="bookForm">
-            <div><input id="bookTitle" type="text" placeholder="Title" required></div>
-            <br>
-            <div><input id="bookAuthor" type="text" placeholder="Author" required></div>
-            <br>
-            <div class="btnSubmit"><button id="addButton" type="submit">Add</button></div>
+          <div>
+            <input id="bookTitle" type="text" placeholder="Title" required />
+          </div>
+          <br />
+          <div>
+            <input id="bookAuthor" type="text" placeholder="Author" required />
+          </div>
+          <br />
+          <div class="btnSubmit">
+            <button id="addButton" type="submit">Add</button>
+          </div>
         </form>
-    </div>
+      </div>
+    </section>
+    <section class="contact-info" id="contact-info">
+      <h2>Contact information</h2>
+      <article>
+        <h3>Victor Damola</h3>
+        GitHub: <a href="https://github.com/V0pe" target="blank">@V0pe</a> <br>
+        Twitter: <a href="https://twitter.com/de_vope" target="blank">@de_vope_</a> <br>
+        LinkedIn: <a href="https://linkedin.com/in/victor-damola-aderibigbe-27931ab0" target="blank">Victor Damola</a>
+      </article>
+      <article>
+        <h3>Roland Ossisa Yuma</h3>
+        GitHub: <a href="https://github.com/rolandfbk" target="blank">@rolandfbk</a> <br>
+        Twitter: <a href="https://twitter.com/rolandfbk" target="blank">@rolandfbk</a> <br>
+        LinkedIn: <a href="linkedin.com/in/roland-ossisa-yuma-4595547b" target="blank">Roland Ossisa Yuma</a>
+      </article>
+    </section>
+    <section class="footer">
+      <footer>
+        Copyright Roland and Victor
+      </footer>
+    </section>
 
-
+    <script src="application.js"></script>
     <script src="index.js"></script>
-
-</body>
+  </body>
 </html>
