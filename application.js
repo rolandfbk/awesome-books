@@ -41,3 +41,18 @@ function displayContact(contact) {
   document.getElementById('list').style.color = '#000';
   document.getElementById('list').style.fontWeight = 'normal';
 }
+
+const timenow = document.querySelector('.date');
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const date = new Date();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+  const day = date.getDate();
+  timenow.innerHTML = `${monthNames[month]} ${day} ${year}, ${date.toLocaleTimeString()}`;
+}
