@@ -56,11 +56,11 @@ class Booksdatabase {
     bookForm.addEventListener('submit', () => {
       const inputBook = new Book(bookTitle.value, bookAuthor.value);
       this.booksrecord.push(inputBook);
+      localStorage.setItem('bookArchive', JSON.stringify(this.booksrecord));
       bookTitle.value = '';
       bookAuthor.value = '';
       bookTitle.focus();
       bookAuthor.focus();
-      localStorage.setItem('bookArchive', JSON.stringify(this.booksrecord));
       Booksdatabase.getBooks();
     });
 
